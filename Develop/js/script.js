@@ -70,14 +70,17 @@ $saveBtn.attr('id', 'saveBoxBtn');
 
      }
 
-     //row colors
+  
      
-
+//row colors
      function updateRows(){
-        
+       //run function for each element with the class of row
         $('.row').each(function(){
+            //current time
             let currentTime = moment().hours();
+            //locate hour-index attribute
             let rowHour = $(this).attr('hour-index');
+            //change color or row depending on the time row and current time
             if (rowHour === currentTime){
                 $(this).addClass('present');
             }
@@ -89,7 +92,7 @@ $saveBtn.attr('id', 'saveBoxBtn');
 
                 };
      })
-
+//end row colors
         
         
         
