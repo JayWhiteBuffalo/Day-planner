@@ -93,18 +93,12 @@ $saveBtn.attr('id', 'saveBoxBtn');
                 };
      })
 //end row colors
-        
-        
-        
-    
-    
-
-    
-
      }
      updateRows();
 
     //save function
+
+    
     function taskSave(){
         taskBoxs = {};
         $('.taskBox').each(function(){
