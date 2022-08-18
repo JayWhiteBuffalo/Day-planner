@@ -2,9 +2,9 @@
 //when page loads start 
 
 $(document).ready(function() {
+    
 let toDay = moment().format('dddd');    
 $("#currentDay").text(toDay);
-
     //Array for all the task
     taskArr = new Array(13);
 //loop will run untill 19th hour reached
@@ -97,22 +97,57 @@ $saveBtn.attr('id', 'saveBoxBtn');
      updateRows();
 
     //save function
-
-    
     function taskSave(){
-        taskBoxs = {};
-        $('.taskBox').each(function(){
-            taskBoxs[userTask.id] = this.value;
-    })
-                //Save tasks to local Storage
-                localStorage.setItem('savedTask', JSON.stringify(taskBoxs));
-                console.log(localStorage.getItem('savedTask'));
-                console.log(JSON.parse(localStorage.getItem('savedTask')));
-     }
-         let saveBtnEl = document.querySelector('#saveBoxBtn');
+        for (var i = 0; i < taskArr.length; i++){
+        //grab text from input
+        let userTaskInput = document.querySelector("input[hour-index= '0']").value;
+        console.log(userTaskInput);
+        }
+        // for (var i = 0; i < taskArr.length; i++) {
+        //     if (taskArr[i] === null){
+        //         //check local storage 
+        //         //populate text field with that data
+        //         //if no data there, return
+        //     }
+        //     //if the input does not match the data stored in array
+        //    else if (userTask !== taskArr[i]){
+        //     //replace the data in array to match user input
+        //         taskArr[i] = userTask;
+
+
+        //     }
+        // };
+        
+        // taskArr.push(userTask);
+        // $('.dailyplan').each(function(){
+
+        //     taskArr[this.id] = userTask.value;
+            
+        
+        // })
+        // localStorage.setItem('savedTask', JSON.stringify(taskArr));
+        // console.log(localStorage.getItem('savedTask'));
+
+    }
+
+    //     taskBoxs = {};
+    //     $('.taskBox').each(function(){
+    //         taskBoxs[userTask.id] = this.value;
+    // })
+    //             //Save tasks to local Storage
+    //             localStorage.setItem('savedTask', JSON.stringify(taskBoxs));
+    //             console.log(localStorage.getItem('savedTask'));
+    //             console.log(JSON.parse(localStorage.getItem('savedTask')));
+    //  }
+    //      let saveBtnEl = document.querySelector('#saveBoxBtn');
     
-            saveBtnEl.addEventListener("click", taskSave);
-    
+    //         saveBtnEl.addEventListener("click", taskSave);
+
+    //target button
+
+    let saveBtnEl = document.getElementById('saveBoxBtn');
+
+    saveBtnEl.onclick = taskSave;
         
        
 
