@@ -98,11 +98,50 @@ $saveBtn.attr('id', 'saveBoxBtn');
 
     //save function
     function taskSave(){
-        for (var i = 0; i < taskArr.length; i++){
+        
         //grab text from input
-        let userTaskInput = document.querySelector("input[hour-index= '0']").value;
-        console.log(userTaskInput);
-        }
+        let userTaskInput0 = document.querySelector("input[hour-index= '0']").value;
+        console.log(userTaskInput0);
+        let userTaskInput1 = document.querySelector("input[hour-index= '1']").value;
+        console.log(userTaskInput1);
+        let userTaskInput2 = document.querySelector("input[hour-index= '2']").value;
+        console.log(userTaskInput2);
+        let userTaskInput3 = document.querySelector("input[hour-index= '3']").value;
+        console.log(userTaskInput3);
+        let userTaskInput4 = document.querySelector("input[hour-index= '4']").value;
+        console.log(userTaskInput4);
+        let userTaskInput5 = document.querySelector("input[hour-index= '5']").value;
+        console.log(userTaskInput5);
+        let userTaskInput6 = document.querySelector("input[hour-index= '6']").value;
+        console.log(userTaskInput6);
+        let userTaskInput7 = document.querySelector("input[hour-index= '7']").value;
+        console.log(userTaskInput7);
+        let userTaskInput8 = document.querySelector("input[hour-index= '8']").value;
+        console.log(userTaskInput8);
+        let userTaskInput9 = document.querySelector("input[hour-index= '9']").value;
+        console.log(userTaskInput9);
+        let userTaskInput10 = document.querySelector("input[hour-index= '10']").value;
+        console.log(userTaskInput10);
+        let userTaskInput11 = document.querySelector("input[hour-index= '11']").value;
+        console.log(userTaskInput11);
+        let userTaskInput12 = document.querySelector("input[hour-index= '12']").value;
+        console.log(userTaskInput12);
+        localStorage.setItem('savedTask0', JSON.stringify(userTaskInput0));
+        localStorage.setItem('savedTask1', JSON.stringify(userTaskInput1));
+        localStorage.setItem('savedTask2', JSON.stringify(userTaskInput2));
+        localStorage.setItem('savedTask3', JSON.stringify(userTaskInput3));
+        localStorage.setItem('savedTask4', JSON.stringify(userTaskInput4));
+        localStorage.setItem('savedTask5', JSON.stringify(userTaskInput5));
+        localStorage.setItem('savedTask6', JSON.stringify(userTaskInput6));
+        localStorage.setItem('savedTask7', JSON.stringify(userTaskInput7));
+        localStorage.setItem('savedTask8', JSON.stringify(userTaskInput8));
+        localStorage.setItem('savedTask9', JSON.stringify(userTaskInput9));
+        localStorage.setItem('savedTask10', JSON.stringify(userTaskInput10));
+        localStorage.setItem('savedTask11', JSON.stringify(userTaskInput11));
+        localStorage.setItem('savedTask12', JSON.stringify(userTaskInput12));
+
+
+        
         // for (var i = 0; i < taskArr.length; i++) {
         //     if (taskArr[i] === null){
         //         //check local storage 
