@@ -2,8 +2,8 @@
 //when page loads start 
 
 $(document).ready(function() {
-
-
+let toDay = moment().format('dddd');    
+$("#currentDay").text(toDay);
 
     //Array for all the task
     taskArr = new Array(13);
@@ -22,10 +22,7 @@ $(document).ready(function() {
      
 
 //Start task time space    
-//create div where time can be put
-         let $timeDiv = $('<div>');
-         $timeDiv.addClass('time-block');
-         $newRow.append($timeDiv);
+
 //create timeBox
     const $timeBoxtxt = $('<span>');
         $timeBoxtxt.attr('class','timeBox');
@@ -50,7 +47,7 @@ $taskSpan.attr('type','text');
  
     // create col to control width
     let $taskWidth = $('<div>');
-    $taskWidth.addClass('taskBox');
+    $taskWidth.addClass('taskBox flex');
 
     // add col width and row component to row
     $newRow.append($taskWidth);
@@ -61,34 +58,73 @@ $taskSpan.attr('type','text');
 //Start save button portion
 //Create space
 let $saveBox = $('<div>');
-$saveBox.addClass('saveBox');
+$saveBox.addClass('saveBox flex',);
 
 let $saveBtn = $('<button>');
 $saveBtn.textContent = "Save";
-$saveBtn.addClass('saveBtn');
+$saveBtn.addClass('saveBtn flex');
 
 $saveBtn.attr('id', 'saveBoxBtn');   
     $newRow.append($saveBox);
     $saveBox.append($saveBtn);
 
+     }
+
+     //row colors
+     
+
+     function updateRows(){
+        
+        $('.row').each(function(){
+            let currentTime = moment().hours();
+            let rowHour = $(this).attr('hour-index');
+            if (rowHour === currentTime){
+                $(this).addClass('present');
+            }
+            else if (rowHour < currentTime){
+                $(this).addClass('past');
+            }
+            else{
+                $(this).addClass('future');
+
+                };
+     })
+
+        
+        
+        
+    
+    
+
+    
+
+     }
+     updateRows();
+
+    //save function
+    function taskSave(){
+        taskBoxs = {};
+        $('.taskBox').each(function(){
+            taskBoxs[userTask.id] = this.value;
+    })
+                //Save tasks to local Storage
+                localStorage.setItem('savedTask', JSON.stringify(taskBoxs));
+                console.log(localStorage.getItem('savedTask'));
+                console.log(JSON.parse(localStorage.getItem('savedTask')));
+     }
+         let saveBtnEl = document.querySelector('#saveBoxBtn');
+    
+            saveBtnEl.addEventListener("click", taskSave);
     
         
        
 
-    let saveBtnEl = document.querySelector("#saveBoxBtn");
-    
-    saveBtnEl.addEventListener("click", function(){console.log("touchdown");
+
 
         
-        //Save tasks to local Storage
-        localStorage.setItem("tasks", JSON.stringify(taskArr));
+
 
 
 });
 
-     }
-
-     //button takes userInput
-     
-});
 
