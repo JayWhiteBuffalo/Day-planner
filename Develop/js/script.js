@@ -81,7 +81,7 @@ $saveBtn.attr('id', 'saveBoxBtn');
             //locate hour-index attribute
             let rowHour = $(this).attr('hour-index');
             //change color or row depending on the time row and current time
-            if (rowHour === currentTime){
+            if (rowHour == currentTime){
                 $(this).addClass('present');
             }
             else if (rowHour < currentTime){
