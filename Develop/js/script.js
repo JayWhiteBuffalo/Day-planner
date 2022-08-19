@@ -61,10 +61,10 @@ let $saveBox = $('<div>');
 $saveBox.addClass('saveBox flex',);
 
 let $saveBtn = $('<button>');
-$saveBtn.textContent = "Save";
+$("#saveBtn").text("Save");
 $saveBtn.addClass('saveBtn flex');
 
-$saveBtn.attr('id', 'saveBoxBtn');   
+$saveBtn.attr('class', 'saveBoxBtn');   
     $newRow.append($saveBox);
     $saveBox.append($saveBtn);
 
@@ -125,34 +125,50 @@ $saveBtn.attr('id', 'saveBoxBtn');
         let userTaskInput11 = document.querySelector("input[hour-index= '11']").value;
         
         let userTaskInput12 = document.querySelector("input[hour-index= '12']").value;
-        
-        localStorage.setItem('savedTask0', JSON.stringify(userTaskInput0));
-        localStorage.setItem('savedTask1', JSON.stringify(userTaskInput1));
-        localStorage.setItem('savedTask2', JSON.stringify(userTaskInput2));
-        localStorage.setItem('savedTask3', JSON.stringify(userTaskInput3));
-        localStorage.setItem('savedTask4', JSON.stringify(userTaskInput4));
-        localStorage.setItem('savedTask5', JSON.stringify(userTaskInput5));
-        localStorage.setItem('savedTask6', JSON.stringify(userTaskInput6));
-        localStorage.setItem('savedTask7', JSON.stringify(userTaskInput7));
-        localStorage.setItem('savedTask8', JSON.stringify(userTaskInput8));
-        localStorage.setItem('savedTask9', JSON.stringify(userTaskInput9));
-        localStorage.setItem('savedTask10', JSON.stringify(userTaskInput10));
-        localStorage.setItem('savedTask11', JSON.stringify(userTaskInput11));
-        localStorage.setItem('savedTask12', JSON.stringify(userTaskInput12));
+        //store text in local storage with a key
+        localStorage.setItem('savedTask0', (userTaskInput0));
+        localStorage.setItem('savedTask1', (userTaskInput1));
+        localStorage.setItem('savedTask2', (userTaskInput2));
+        localStorage.setItem('savedTask3', (userTaskInput3));
+        localStorage.setItem('savedTask4', (userTaskInput4));
+        localStorage.setItem('savedTask5', (userTaskInput5));
+        localStorage.setItem('savedTask6', (userTaskInput6));
+        localStorage.setItem('savedTask7', (userTaskInput7));
+        localStorage.setItem('savedTask8', (userTaskInput8));
+        localStorage.setItem('savedTask9', (userTaskInput9));
+        localStorage.setItem('savedTask10', (userTaskInput10));
+        localStorage.setItem('savedTask11', (userTaskInput11));
+        localStorage.setItem('savedTask12', (userTaskInput12));
 
         console.log(localStorage.getItem('savedTask0'));
 
-        let save0 = localStorage.getItem("savedTask0");
-        
 
     }
 
+    function restoreTasks(){
+        //get out of storage
+        $("input[hour-index= '0']").val(localStorage.getItem('savedTask0'));
+        $("input[hour-index= '1']").val(localStorage.getItem('savedTask1'));
+        $("input[hour-index= '2']").val(localStorage.getItem('savedTask2'));
+        $("input[hour-index= '3']").val(localStorage.getItem('savedTask3'));
+        $("input[hour-index= '4']").val(localStorage.getItem('savedTask4'));
+        $("input[hour-index= '5']").val(localStorage.getItem('savedTask5'));
+        $("input[hour-index= '6']").val(localStorage.getItem('savedTask6'));
+        $("input[hour-index= '7']").val(localStorage.getItem('savedTask7'));
+        $("input[hour-index= '8']").val(localStorage.getItem('savedTask8'));
+        $("input[hour-index= '9']").val(localStorage.getItem('savedTask9'));
+        $("input[hour-index= '10']").val(localStorage.getItem('savedTask10'));
+        $("input[hour-index= '11']").val(localStorage.getItem('savedTask11'));
+        $("input[hour-index= '12']").val(localStorage.getItem('savedTask12'));
+        
+    }
+    restoreTasks();
 
     //target button
 
     let saveBtnEl = document.getElementById('saveBoxBtn');
 
-    saveBtnEl.onclick = taskSave;
+    $('.saveBoxBtn').on('click', taskSave);
         
        
 

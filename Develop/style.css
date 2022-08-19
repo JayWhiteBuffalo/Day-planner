@@ -1,6 +1,4 @@
-white-space: {
-  pre-wrap;
-}
+
 
 .flex{
   display: flex;
@@ -17,13 +15,15 @@ white-space: {
 }
 
 .row {
+  display: flexbox;
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid black;
   width: 100%;
-  flex: display;
+  flex: 1;
   align-items: center;
   justify-content:center;
+  flex-direction: row;
 }
 .timeBox {
 
@@ -44,8 +44,9 @@ white-space: {
   padding: 10px;
 }
 .saveBox{
-  padding: 10px;
   border: 1px solid black;
+  width: 10px;
+  position: relative;
 }
 
 .hour {
